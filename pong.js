@@ -13,6 +13,7 @@ var endGame = function() {
   unAnimate(myReq);
   document.removeChild(getElementById('canvas-here'));
   resetGame();
+  alert("here?");
 }
 
 // Resets ball and player positions

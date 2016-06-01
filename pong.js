@@ -10,10 +10,9 @@ var startGame = function() {
 
 // Ends the game when the page is switched
 var endGame = function() {
-  unAnimate(myReq);
-  document.removeChild(getElementById('canvas-here'));
   resetGame();
-  alert("here?");
+  document.removeChild(getElementById('canvas-here'));
+  unAnimate(myReq);
 }
 
 // Resets ball and player positions

@@ -16,7 +16,9 @@ var endGame = function() {
 
 // Resets ball and player positions
 var resetGame = function() {
-  resetBall();
+  ball.resetPosition();
+  player.resetPosition();
+  computer.resetPosition(); 
 }
 
 // 2-D canvas

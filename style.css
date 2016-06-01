@@ -1,7 +1,7 @@
 /* GLOBAL */
 .navbar {
   background-color: #FFFFFF;
-  border-color: black;
+  border-radius: 3px;
   box-shadow: 0 6px 6px -6px #000000;
 }
 .navbar .navbar-header a {

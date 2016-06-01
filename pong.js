@@ -11,6 +11,12 @@ var startGame = function() {
 // Ends the game when the page is switched
 var endGame = function() {
   unAnimate(myReq);
+  resetGame();
+}
+
+// Resets ball and player positions
+var resetGame = function() {
+  resetBall();
 }
 
 // 2-D canvas
@@ -34,8 +40,7 @@ var animate = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
   function(callback) { window.setTimeout(callback, 1000/30) };
 
-// Stops refreshing the canvas -- prevents script from running
-//  when not on page
+// Stops animation
 var unAnimate = function(myReq) {
   window.cancelAnimationFrame(myReq) ||
   window.mozCancelAnimationFrame(myReq);
@@ -96,7 +101,15 @@ Paddle.prototype.move = function(x, y) {
     this.y = 400 - this.height;
     this.y_speed = 0;
   }
-}
+};
+Paddle.prototype.resetPosition = function(x, y, width, height) {
+  this.x = x;
+  this.y = y;
+  this.width = width;
+  this.height = height;
+  this.x_speed = 0;
+  this.y_speed = 0;
+};
 
 // ******************************************************************
 // PLAYER
@@ -122,6 +135,7 @@ Player.prototype.update = function() {
       this.paddle.move(0, 0);
   }
 };
+Player.prototype.resetPosition = function() { this.paddle.resetPosition(20, 175, 10, 50)};
 
 // ******************************************************************
 // COMPUTER
@@ -157,6 +171,7 @@ Computer.prototype.update = function(ball) {
   else if (this.y + this.height > 400)
     this.y = 400 - this.height;
 }
+Computer.prototype.resetPosition = function() { this.paddle.resetPosition(760, 175, 10, 50) };
 
 // ******************************************************************
 // BALL
@@ -225,6 +240,9 @@ Ball.prototype.update = function(paddle1, paddle2) {
           this.x += this.x_speed;
     } 
   }
+};
+Ball.prototype.resetPosition = function() { 
+  this.x = 400; this.y = 200; this.x_speed = 3; this.y_speed = 0; 
 };
 
 // ******************************************************************

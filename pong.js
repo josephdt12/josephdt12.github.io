@@ -184,7 +184,7 @@ Computer.prototype.resetPosition = function() { this.paddle.resetPosition(760, 1
 function Ball(x, y) {
   this.x = x;
   this.y = y;
-  this.x_speed = -3;
+  this.x_speed = 3;
   this.y_speed = 0;
   this.radius = 5;
 }

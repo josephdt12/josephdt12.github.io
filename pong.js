@@ -11,7 +11,7 @@ var startGame = function() {
 // Ends the game when the page is switched
 var endGame = function() {
   unAnimate(myReq);
-  document.removeChild(canvas);
+  document.getElementById('canvas-here').removeChild(canvas);
   resetGame();
 }
 

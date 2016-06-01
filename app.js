@@ -36,7 +36,7 @@
     
     // On controller exit, stop rendering game
     $scope.$on("$destroy", function() {
-      endGame();
+      while(!endGame());
     });
   });
 

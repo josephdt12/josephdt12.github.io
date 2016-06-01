@@ -1,2 +1,2 @@
-# josephdt12.github.io
-Personal website
+# personal_website
+Personal website draft

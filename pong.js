@@ -47,7 +47,7 @@ var animate = window.requestAnimationFrame ||
 // Stops animation
 var unAnimate = function(myReq) {
   window.cancelAnimationFrame(myReq) ||
-  window.mozCancelAnimationFrame(myReq);
+  window.mozCancelAnimationFrame;
 }
 
 var step = function() {

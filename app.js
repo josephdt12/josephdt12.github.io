@@ -1,7 +1,7 @@
 (function() {
   var app = angular.module('webpage', ['ngRoute']);
   
-  app.config(['$routeProvider', function($routeProvider, $locationProvider) {
+  app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/home', {
         controller: 'HomeController',
@@ -20,7 +20,6 @@
         templateUrl: "personal.html"
       })
       .otherwise({ redirectTo: '/home'});
-    $locationProvider.html5mode(true);
   }]);
 
   // Controllers for each HTML page

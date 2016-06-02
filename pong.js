@@ -5,12 +5,12 @@
 // Starts game
 var startGame = function() {
   document.getElementById('canvas-here').appendChild(canvas);
-  Game.intervalID = setInterval(Game.run, 1000 / Game.fps);
+  myReq = animate(step);
 } // startGame()
 
 // Ends the game when the page is switched
 var endGame = function() {
-  clearInterval(Game.intervalID);
+  unAnimate(myReq);
   document.getElementById('canvas-here').removeChild(canvas);
   resetGame();
 }
@@ -31,23 +31,6 @@ canvas.height = height;
 var context = canvas.getContext('2d');
 
 // ******************************************************************
-// ANIMATION V2
-// ******************************************************************
-
-var Game = {};
-Game.fps = 60;
-Game.draw = function() {
-  render();
-};
-Game.update = function() {
-  update();
-};
-Game.run = function() {
-  Game.update();
-  Game.draw();
-}
-
-// ******************************************************************
 // ANIMATION & UPDATING
 // ******************************************************************
 
@@ -58,7 +41,7 @@ var myReq;
 var animate = window.requestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.mozRequestAnimationFrame ||
-  function(callback) { window.setTimeout(callback, 1000/60) };
+  function(callback) { window.setTimeout(callback, 1000/30) };
 
 // Stops animation
 var unAnimate = function(myReq) {
@@ -174,11 +157,11 @@ Computer.prototype.update = function(ball) {
   var paddle_center = this.paddle.y + (this.paddle.height / 2);
   var dist = paddle_center - y_pos;
   
-  if (dist <= 0 && dist < -4) {
+  if (dist < 0 && dist < -4) {
     // Ball is below paddle entirely
     dist = 4;
   }
-  else if (dist >= 0 && dist > 4) {
+  else if (dist > 0 && dist > 4) {
     // Ball is above paddle entirely
     dist = -4;
   }

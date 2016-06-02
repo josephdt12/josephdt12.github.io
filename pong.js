@@ -41,7 +41,7 @@ var myReq;
 var animate = window.requestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.mozRequestAnimationFrame ||
-  function(callback) { window.setTimeout(callback, 1000/30) };
+  function(callback) { window.setTimeout(callback, 1000/60) };
 
 // Stops animation
 var unAnimate = function(myReq) {
@@ -130,10 +130,10 @@ Player.prototype.update = function() {
     var value = Number(key);
     // Up arrow
     if (value == 38)
-      this.paddle.move(0, -4);
+      this.paddle.move(0, -2);
     // Down arrow
     else if (value == 40)
-      this.paddle.move(0, 4);
+      this.paddle.move(0, 2);
     else
       this.paddle.move(0, 0);
   }
@@ -157,13 +157,13 @@ Computer.prototype.update = function(ball) {
   var paddle_center = this.paddle.y + (this.paddle.height / 2);
   var dist = paddle_center - y_pos;
   
-  if (dist < 0 && dist < -4) {
+  if (dist < 0 && dist < -2) {
     // Ball is below paddle entirely
-    dist = 4;
+    dist = 2;
   }
-  else if (dist > 0 && dist > 4) {
+  else if (dist > 0 && dist > 2) {
     // Ball is above paddle entirely
-    dist = -4;
+    dist = -2;
   }
   
   this.paddle.move(0, dist);
@@ -184,7 +184,7 @@ Computer.prototype.resetPosition = function() { this.paddle.resetPosition(760, 1
 function Ball(x, y) {
   this.x = x;
   this.y = y;
-  this.x_speed = -3;
+  this.x_speed = -1;
   this.y_speed = 0;
   this.radius = 5;
 }
@@ -217,7 +217,7 @@ Ball.prototype.update = function(paddle1, paddle2) {
   
   // Point is scored, reset
   if (this.x < 0 || this.x > 800) {
-    this.x_speed = 3;
+    this.x_speed = 1;
     this.y_speed = 0;
     this.x = 400;
     this.y = 200;
@@ -228,7 +228,7 @@ Ball.prototype.update = function(paddle1, paddle2) {
     if (left_x < (paddle1.x + paddle1.width) &&
         right_x > paddle1.x && top_y > paddle1.y &&
         bottom_y < (paddle1.y + paddle1.height)) {
-          this.x_speed = 3;
+          this.x_speed = 1;
           this.y_speed += (paddle1.y_speed / 2);
           this.x += this.x_speed;
     }
@@ -238,7 +238,7 @@ Ball.prototype.update = function(paddle1, paddle2) {
     if (right_x > paddle2.x &&
         left_x < paddle2.x && top_y > paddle2.y &&
         bottom_y < (paddle2.y + paddle2.height)) {
-          this.x_speed = -3;
+          this.x_speed = -1;
           this.y_speed += (paddle2.y_speed / 2);
           this.x += this.x_speed;
     } 

@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html ng-app="webpage">
-
+<html ng-app="websiteApp">
 <head>
-  <!-- Settings -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joseph Thomas</title>
-  
-  <!-- Bootstrap, style sheets -->
+    <!-- Bootstrap, stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/core.css" /> 
+  <link rel="stylesheet" href="css/resume.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/projects.css" />
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top navbar-main"
+       ng-controller="NavController as navCtrl">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -25,13 +21,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a class="navbar-brand" href="#/home">Home</a>
+      <a class="navbar-brand" href="#/"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
       </div>
       <div class="collapse navbar-collapse" id="nav-options">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#/resume">Resume</a></li>
-          <li><a href="#/projects">Projects</a></li>
-          <li><a href="#/personal">Personal</a></li>
+          <li ng-class="{ active: navCtrl.isActive('/resume') }">
+            <a href="#/resume">Resume</a></li>
+          <li ng-class="{ active: navCtrl.isActive('/projects') }">
+            <a href="#/projects">Projects</a></li>
+          <li ng-class="{ active: navCtrl.isActive('/personal') }">
+            <a href="#/personal">Personal</a></li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                       aria-expanded="false">Contact<span class="caret"></span></a>
@@ -47,21 +46,23 @@
     </div>
   </nav>
   
-  <!-- MAIN PAGE & INJECTED VIEWS -->
-  <div ng-controller="HomeController">
-    <div ng-view></div>
-  </div>
+  <div ng-view></div>
   
-    <!-- jQuery, AngularJS, and Angular-Route -->
+    <!-- JS Libraries -->
   <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
   <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
   <script data-require="angular-route@*" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
-  
+
   <!-- Bootstrap JS, FontAwesome, and script files -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/8bf09a8887.js"></script>
+
+  <!-- Scripts -->
   <script src="app.js"></script>
-  <script src="pong.js"></script>
+  <script src="routes.js"></script>
+  <script src="resume/directives.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpCO3QPQPYfcq8ikU_7LItyVtmWjJHxi8&ampcallback=initMap"></script>
+  <script src="projects/gmaps/helloworld.js"></script>
 </body>
 
 </html>

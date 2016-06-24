@@ -1,25 +1,3 @@
-/* GLOBAL */
-.navbar {
-  background-color: #FFFFFF;
-  border-radius: 3px;
-  box-shadow: 0 6px 6px -6px #000000;
-}
-.navbar .navbar-header a {
-  color: #000000;
-  font-weight: bold;
-}
-.navbar .navbar-nav li a {
-  color: #000000;
-  font-weight: bold;
-}
-body {
-  padding-top: 50px;
-  background-color: #FFFFFF;
-}
-
-
-/* RESUME.html */
-  /* HEADER */
 .resume-header {
   background-color: #FFFFFF;
   color: #000000;
@@ -111,47 +89,3 @@ body {
     display: none;
   }
 }
-
-
-/* PERSONAL.HTML */
-.personal-header {
-  text-align: center;
-}
-
-
-/* HOME.HTML */
-.home-header {
-  background-color: #FFFFFF;
-  padding: 10px 0px 10px 0;
-  text-align: center;
-}
-.blog {
-  background-color: #FFFFFF; 
-  color: #000000;
-}
-.blog .post {
-  background-color: #616161;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-}
-.blog .post .date {
-  margin-top: 10px;
-  color: #90CAF9;
-}
-.blog .post .title {
-  font-weight: bold;
-}
-
-
-/* PROJECTS.HTML */
-canvas {
-  display: block;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
-  width: 800px;
-}  
-
-

@@ -37,6 +37,7 @@
   border-radius: 3px;
   box-shadow: 0 6px 6px -6px #000000;
 }
+/*
 .skill-block h3 {
   margin: 0px 0px 1px 0px;
   padding: 0px 0px 0px 0px;
@@ -44,10 +45,13 @@
 .skill-block .skill-list {
   margin: 0px 0px 0px 20px;
 }
-.skill-block li {
+*/
+.list-inline-item {
   background-color: #3A89C9;
   color: #FFFFFF;
   margin: 4px 10px 0px 0px;
+  padding: 4px;
+  border-radius:
 }
 
   /* WORK EXPERIENCE SECTION */

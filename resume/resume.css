@@ -1,6 +1,7 @@
 .resume-header {
   background-color: #FFFFFF;
   color: #000000;
+  padding: 10px 0px 10px 0px;
 }
 .resume-header h1 {
   font-size: xx-large;
@@ -9,16 +10,8 @@
 .resume-header p {
   font-size: 16px;
 }
-#headshot {
-  margin: 0 auto;
-  max-width: 200px;
-  max-height: 200px;
-}
-.resume-header {
-  padding: 10px 0px 10px 0px;
-}
-.resume-header .text {
-  text-align: center;
+.resume-header .vertical-align {
+  align-items: center;
 }
 
   /* SKILLS SECTION */

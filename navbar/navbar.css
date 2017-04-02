@@ -8,7 +8,7 @@ body {
   box-shadow: 0 6px 6px -6px #000000;
 }
 
-.nav-link {
+.nav-link, .navbar-brand {
   cursor: pointer;
   cursor: hand;
 }

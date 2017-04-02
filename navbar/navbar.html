@@ -1,20 +1,32 @@
 <script type="text/javascript" src="navbar/navbar.js"></script>
 <link rel="stylesheet" type="text/css" href="navbar/navbar.css"/>
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded navbar-main">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#">Home</a>
-
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" id="resume">Resume</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" id="projects">Projects</a>
       </li>
-    </ul>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false"> Contact</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://www.linkedin.com/in/josephdt12"
+             target="_blank">
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+          <a class="dropdown-item" href="https://github.com/josephdt12"
+             target="_blank">
+            <i class="fa fa-github-square" aria-hidden="true"></i> GitHub
+          </a>
+        </div>
+      </li>
   </div>
 </nav>

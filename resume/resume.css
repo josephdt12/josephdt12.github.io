@@ -18,7 +18,7 @@
 .resume-block {
   background-color: #616161;
   margin-bottom: 20px;
-  padding: 10px 0px 0px 0px;
+  padding: 10px 0px 5px 0px;
   border-radius: 3px;
   box-shadow: 0 6px 6px -6px #000000;
 }
@@ -57,7 +57,7 @@
 }
 .logo {
   float: right;
-  max-height: 75px;
+  max-height: 85px;
   max-width: 200px;
 }
 .job-block .info,

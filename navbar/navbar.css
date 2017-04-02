@@ -1,3 +1,13 @@
+body {
+  padding-top: 65px;
+}
+
+.navbar-main {
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  box-shadow: 0 6px 6px -6px #000000;
+}
+
 .nav-link {
   cursor: pointer;
   cursor: hand;

@@ -7,4 +7,5 @@ $("#sendMessage").click(function(){
     dataType: "json"
   });
   alert("Thanks for the email!");
+  return false;
 });

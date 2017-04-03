@@ -18,10 +18,16 @@ $("#projects").click(function() {
   $("#view").load("projects/projects.html");
 });
 
+$("#contact").click(function() {
+    setNavActive("#contact");
+    $("#view").load("contact.html");
+})
+
 // Set the id passed in as active, resetting all others
 function setNavActive(id) {
   $("#home").removeClass("active");
   $("#resume").removeClass("active");
   $("#projects").removeClass("active");
+  $("#contact").removeClass("active");
   $(id).addClass("active");
 }

@@ -1,0 +1,11 @@
+/* Sidebar links */
+.side-link {
+    cursor: pointer;
+    cursor: hand;
+    display: block;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #DEDEDE;
+    border-radius: 3px;
+    box-shadow: 0 6px 6px -6px #000000;
+}

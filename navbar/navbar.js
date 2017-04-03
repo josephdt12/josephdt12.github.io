@@ -20,7 +20,7 @@ $("#projects").click(function() {
 
 $("#contact").click(function() {
     setNavActive("#contact");
-    $("#view").load("contact.html");
+    $("#view").load("contact/contact.html");
 })
 
 // Set the id passed in as active, resetting all others

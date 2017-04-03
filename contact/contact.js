@@ -14,11 +14,24 @@ $("#sendMessage").click(function(){
 
 $("#contact-form").submit(function(event){
   event.preventDefault();
+
+  var email = $("#email").val();
+  var subject = $("#subject").val();
+  var msg = $("#message").val();
+
   $.ajax({
     url: "http://formspree.io/joethomas@ucdavis.edu",
     method: "POST",
-    data: $(this).serialize(),
-    dataType: "json"
+    data: {
+      _replyto: email,
+      email: email,
+      message: msg,
+      _subject: subject
+    },
+    dataType: "json",
+    success: function() {
+      alert("Thanks for the email!");
+      $('#contact-form')[0].reset();
+    }
   });
-  alert("Thanks for the email!");
 });

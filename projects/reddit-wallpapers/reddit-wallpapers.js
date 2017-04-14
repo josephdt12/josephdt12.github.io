@@ -49,6 +49,6 @@ function initMap(locations) {
     var marker = new google.maps.Marker({
         position: pos,
         map: map,
-        title: 'Hello World!'
+        title: locations[0]['addr']
     });
 }

@@ -36,19 +36,24 @@ $('document').ready(function() {
 });
 
 /**
- * Sets up the map with the first location in the passed locations array.
+ * Places markers on the map based on the JSON data, setting the first pin
+ * to the first location.
  */
+var map;
 function initMap(locations) {
-    var pos = new google.maps.LatLng(locations[0]['lat'], locations[0]['lng']);
+  document.getElementById("locationsCount").textContent += " " + locations.length;
+  var firstLocation = new google.maps.LatLng(locations[0]['lat'], locations[0]['lng']);
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: pos
-    });
+  map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 6,
+      center: firstLocation
+  });
 
+  for (var i = 0; i < locations.length; ++i) {
     var marker = new google.maps.Marker({
-        position: pos,
+        position: new google.maps.LatLng(locations[i]['lat'], locations[i]['lng']),
         map: map,
-        title: locations[0]['addr']
+        title: locations[i]['addr']
     });
+  }
 }

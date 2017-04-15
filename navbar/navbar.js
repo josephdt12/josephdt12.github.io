@@ -1,3 +1,14 @@
+// Navbar on click listener to toggle menu after clicking a link or 'Home'
+$("#home").click(function() {
+  $("#navbarContent").collapse('hide');
+})
+$("#navbarContent").click(function() {
+  $("#navbarContent").collapse('hide');
+});
+
+
+// Set on click listeners for each navbar link to change views and active
+// classes
 $(document).ready(function() {
   $("#resume").addClass("active");
   $("#view").load("resume/resume.html");

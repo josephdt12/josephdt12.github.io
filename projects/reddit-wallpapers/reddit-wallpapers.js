@@ -73,6 +73,7 @@ function nextMarker() {
         currentLocation += 1;
 
     var newPosition = new google.maps.LatLng(locations[currentLocation]['lat'], locations[currentLocation]['lng']);
+    document.getElementById("currentLocation").textContent = "Current location: " + locations[currentLocation]['addr'];
     map.panTo(newPosition);
 }
 $('#panButton').click(function(){
